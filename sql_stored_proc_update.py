@@ -9,6 +9,7 @@ import os
 import sql_server_pbixrefresher as pref
 import pyautogui
 import subprocess
+import pyautogui
 
 
 def send_mail(new_records):
@@ -31,7 +32,7 @@ def send_mail(new_records):
     # start TLS for security
     s.starttls()
     # Authentication
-    s.login(fromaddr, "lqglrrtepepxamvz")
+    s.login(fromaddr, "fjaobhqttpvcexfi")
     # for specific password
     # https://myaccount.google.com/security?rapt=AEjHL4PlAh6rv38PgIokqo4MNOKXlPRfjcyZlgvwF4by81rOQ8XUhwWJnn12AzOa5
     # VS-vGqITVfOyHZQzutJNc-grjyjZtI4sQ
@@ -45,7 +46,7 @@ def send_mail(new_records):
     print("sent . . .")
 
 
-def update_zeppa_apps(rows_count=361):
+def update_zeppa_apps(rows_count=434):
     """
     This script automatically executes the stored procedure inside the asReal Database,
     which updates table zeppa_table for Power BI report
@@ -67,7 +68,7 @@ def update_zeppa_apps(rows_count=361):
                 cursor.close()
                 db_connection.close()
                 print("connection closed, new apps NOT found, sleep ...")
-                time.sleep(300)
+                time.sleep(600)
                 print("trying to find new apps ...")
             else:
                 print("new apps found")
@@ -77,16 +78,25 @@ def update_zeppa_apps(rows_count=361):
                 db_connection.close()
                 print("connection closed with NEW apps, sleep ...")
                 send_mail(rows_new)
-                # pbi block
-                path_pbi_file = r"C:\Program Files\Microsoft Power BI Desktop\bin\PBIDesktop.exe"
-                subprocess.Popen(path_pbi_file, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-                                 stderr=subprocess.PIPE,
-                                 universal_newlines=True, shell=False)
-                time.sleep(18)
-                pref.PbiRefresher().open_file()
-                # pref.open_file()
-
-                time.sleep(30)
+                try:
+                    # pbi block
+                    pyautogui.FAILSAFE = False
+                    pyautogui.hotkey('win', 'd')
+                    path_pbi_file = r"C:\Program Files\Microsoft Power BI Desktop\bin\PBIDesktop.exe"
+                    subprocess.Popen(path_pbi_file, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                                     stderr=subprocess.PIPE,
+                                     universal_newlines=True, shell=False)
+                    pyautogui.FAILSAFE = False
+                    time.sleep(18)
+                    pref.PbiRefresher().open_file()
+                    print("alt tab")
+                    pyautogui.hotkey('alt', 'tab')
+                    # pref.open_file()
+                except Exception as ex:
+                    print(ex)
+                    send_mail(ex)
+                    break
+                time.sleep(60)
                 update_zeppa_apps(rows_new)
         except Exception as e:
             print("Oops!")
