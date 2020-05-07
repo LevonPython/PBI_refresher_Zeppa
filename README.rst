@@ -1,4 +1,4 @@
-.. image:: https://github.com/LevonPython/PBI_refresher_Zeppa/blob/master/PBI%20refresher%20photo.png
+.. image:: https://github.com/LevonPython/PBI_refresher_Zeppa/blob/master/PBI%20refresher%20photo2.png
    :align: center
    :target: https://powerbi.microsoft.com/en-us/
    :alt: Power BI Logo
