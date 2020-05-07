@@ -1,4 +1,4 @@
-.. image:: https://www.element61.be/sites/default/files/Power%20BI.png
+.. image:: https://i.pinimg.com/originals/31/6c/eb/316ceb2b81248f951926e806ecb6e8a9.gif
    :align: center
    :target: https://powerbi.microsoft.com/en-us/
    :alt: Power BI Logo
