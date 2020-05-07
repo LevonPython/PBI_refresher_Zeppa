@@ -8,6 +8,7 @@
 Power BI refresher
 ============
 - `Introduction`_
+- `Installation`_
 - `Usage`_
 - `how it works`_
 - `Bug reporting`_
