@@ -1,3 +1,7 @@
+.. image:: https://www.element61.be/sites/default/files/Power%20BI.png
+   :align: center
+   :target: https://powerbi.microsoft.com/en-us/
+   :alt: Power BI Logo
 # Power BI refresher
 Script for automation of refreshing Power BI workbooks. Built on Python 3.7 and pyautogui.
 
