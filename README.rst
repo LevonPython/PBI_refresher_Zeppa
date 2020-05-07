@@ -2,12 +2,16 @@
    :align: center
    :target: https://powerbi.microsoft.com/en-us/
    :alt: Power BI Logo
-# Power BI refresher
+============
+Power BI refresher
+============
 Script for automation of refreshing Power BI workbooks. Built on Python 3.7 and pyautogui.
 
 Developed for Power BI Desktop May 2019 Update (.69.5467.2151) on Windows 10 64-bit with English locale.
 
-# Installation
+============
+Installation
+============
 Install using pip
 
 pip install opencv-python <br/>                                                                                                          pip install pyautogui
@@ -15,7 +19,9 @@ pip install opencv-python <br/>                                                 
 you can find in requirements.txt file
 
 
-# Usage  
+============
+Usage  
+============
 python sql_stored_proc_update.py    <br/>                                                                                                      
 WHERE<br/>
 python <py file> is file which es refreshing each 5 minutes sql_stored procedure and creates new table removing old one.<br/>
