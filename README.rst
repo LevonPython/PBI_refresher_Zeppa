@@ -2,8 +2,17 @@
    :align: center
    :target: https://powerbi.microsoft.com/en-us/
    :alt: Power BI Logo
+   
+  
 ============
 Power BI refresher
+============
+- `Introduction`_
+- `Usage`_
+- `how it works`_
+- `Bug reporting`_
+============
+Introduction
 ============
 Script for automation of refreshing Power BI workbooks. Built on Python 3.7 and pyautogui.
 
@@ -26,7 +35,7 @@ python sql_stored_proc_update.py    <br/>
 WHERE<br/>
 python <py file> is file which es refreshing each 5 minutes sql_stored procedure and creates new table removing old one.<br/>
 If there are new loan applications found, then it automatically runs pbix. file, refresh and save it, then publish and close.
-  And this process is going and going recursively till it again finds new applications for loan.
+And this process is going and going recursively till it again finds new applications for loan.
 
 Keep in mind that that user of pbix should be logged in order to be able to publish it.     <br/>                                        Please keep in mind that this script uses GUI of Power BI Desktop and it needs that a user is logged in Windows session. 
 
